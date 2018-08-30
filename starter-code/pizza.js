@@ -17,22 +17,19 @@ $(document).ready(function() {
   $(".sauce-white").hide();
   $(".price li:nth-child(4)").hide();
 
-  $(".btn-crust").toggleClass("active");
-  $(".crust, .crust-gluten-free").hide();
+  
+  $(".crust").removeClass("crust-gluten-free");
   $(".price li:nth-child(5)").hide();
 
-  var price = 10;
   $(".btn-pepperonni").click(function() {
     $(this).toggleClass("active");
     $(".price li:nth-child(1)").toggleClass("charge");
     if ($(this).hasClass("active")) {
       $(".pep").show();
       $(".price li:nth-child(1)").show();
-      price += 1;
     } else {
       $(".pep").hide();
       $(".price li:nth-child(1)").hide();
-      price -= 1;
     }
     totalPrice.innerHTML = "$" + getTotalPrice();
   });
@@ -43,7 +40,6 @@ $(document).ready(function() {
     if ($(this).hasClass("active")) {
       $(".mushroom").show();
       $(".price li:nth-child(2)").show();
-      price += 1;
     } else {
       $(".mushroom").hide();
       $(".price li:nth-child(2)").hide();
@@ -57,7 +53,6 @@ $(document).ready(function() {
     if ($(this).hasClass("active")) {
       $(".green-pepper").show();
       $(".price li:nth-child(3)").show();
-      price += 1;
     } else {
       $(".green-pepper").hide();
       $(".price li:nth-child(3)").hide();
@@ -73,7 +68,6 @@ $(document).ready(function() {
     if ($(this).hasClass("active")) {
       $(".sauce, sauce-white").show();
       $(".price li:nth-child(4)").show();
-      price += 1;
     } else {
       $(".sauce-white").hide();
       $(".price li:nth-child(4)").hide();
@@ -87,7 +81,6 @@ $(document).ready(function() {
     if ($(this).hasClass("active")) {
       $(".crust, .crust-gluten-free").show();
       $(".price li:nth-child(5)").show();
-      price += 1;
     } else {
       $(".crust, .crust-gluten-free").hide();
       $(".price li:nth-child(5)").hide();
